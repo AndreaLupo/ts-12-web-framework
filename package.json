@@ -4,7 +4,8 @@
   "description": "To run the application, run:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:db": "json-server -w db.json",
+    "start:parcel": "npx parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/AndreaLupo/ts-12-web-framework/issues"
   },
-  "homepage": "https://github.com/AndreaLupo/ts-12-web-framework#readme"
+  "homepage": "https://github.com/AndreaLupo/ts-12-web-framework#readme",
+  "dependencies": {
+    "axios": "^1.2.0"
+  },
+  "devDependencies": {
+    "buffer": "^5.7.1"
+  }
 }
