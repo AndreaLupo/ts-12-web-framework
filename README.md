@@ -8,6 +8,8 @@ This project uses:
 
 ## Topics
 
+- Optional properties in interfaces
+
 ## Run
 
 To run the application, run:
