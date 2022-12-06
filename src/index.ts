@@ -18,3 +18,9 @@ user.save();
 // new user
 const baby = new User({ name: 'Carletto', age: 2 });
 baby.save();
+
+
+user.events.on('change', () => {
+  console.log('change!');
+});
+user.events.trigger('change');
