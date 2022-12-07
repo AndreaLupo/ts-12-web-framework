@@ -27,6 +27,8 @@ json-server -w db.json
 ## Topics
 
 - Optional properties in interfaces
+- generic type extending interface (`Sync.ts`)
+- getter with generic return type (`Attributes.ts`)
 
 ## Run
 
