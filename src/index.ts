@@ -59,15 +59,8 @@ newUser.set({ name: 'Awesome!' });
 
 /// COLLETIONS
 import { Collection } from "./models/Collection";
-import { UserProps } from './models/User';
 
-const collection = new Collection<User, UserProps>(
-  'http://localhost:3000/users',
-  (json: UserProps) => {
-    return User.buildUser(json);
-  }
-);
-
+const collection = User.buildUserCollection();
 collection.on('change', () => {
   console.log(collection);
 })
