@@ -45,3 +45,9 @@ console.log(user.get('name'));
 
 // user.trigger('change');
 user.set({ name: 'New name' });
+
+const newUser = new User({ id: 1 });
+newUser.on('change', () => {
+  console.log(newUser);
+});
+newUser.fetch();

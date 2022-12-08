@@ -11,6 +11,10 @@ export class Attributes<T> {
     // copy props from the second object into the first object
     Object.assign(this.data as Object, update);
   }
+
+  getAll(): T {
+    return this.data;
+  }
 }
 
 
