@@ -3,7 +3,7 @@ import { AxiosPromise, AxiosResponse } from 'axios';
  * Use interface so that the implementation for the specific model class can change.
  */
 
-interface ModelAttributes<T> {
+export interface ModelAttributes<T> {
   set(update: T): void;
   getAll(): T;
   get<K extends keyof T>(key: K): T[K];
@@ -21,7 +21,7 @@ interface Events {
   trigger(eventName: string): void;
 }
 
-interface HasId {
+export interface HasId {
   id?: number;
 }
 
