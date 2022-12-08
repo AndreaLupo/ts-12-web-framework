@@ -35,8 +35,15 @@ export class Model<T extends HasId> {
 
   /**
    * Returns the reference to the function on the Eventing class.
+   * 
+   * Can do this only because events and attributes are created directly in the constructor parameters.
+   * If they where created inside the constructor body, that would throw an error, since in the compiled javascript
+   * these declaration will be at the top of the constructor body, i.e. before the class is instantiated.
    */
-  get on() {
+  on = this.events.on;
+  trigger = this.events.trigger;
+  get = this.attributes.get;
+  /* get on() {
     return this.events.on;
   }
 
@@ -46,7 +53,7 @@ export class Model<T extends HasId> {
 
   get get() {
     return this.attributes.get;
-  }
+  } */
 
   set(update: T): void {
     this.attributes.set(update);
