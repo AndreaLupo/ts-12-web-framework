@@ -29,6 +29,7 @@ json-server -w db.json
 - Optional properties in interfaces
 - generic type extending interface (`Sync.ts`)
 - getter with generic return type (`Attributes.ts`)
+- generic `Model` class to be used as anchestor from all the classes that represents a Model entity (used inheritance).
 
 ## Run
 

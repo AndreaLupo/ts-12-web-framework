@@ -27,7 +27,8 @@ user.events.trigger('change'); */
 
 import { User } from "./models/User";
 
-const user = new User({ name: 'Other one', age: 1 });
+// const user = new User({ name: 'Other one', age: 1 });
+const user = User.buildUser({ name: 'Other one', age: 1 });
 
 /* BAD!!!! 
 user.attributes.get('id')
@@ -44,10 +45,12 @@ user.on('change', () => {
 console.log(user.get('name'));
 
 // user.trigger('change');
-user.set({ name: 'New name' });
+user.set({ name: 'Spectacular!' });
 
-const newUser = new User({ id: 1 });
+// const newUser = new User({ id: 1 });
+const newUser = User.buildUser({ id: 1 });
 newUser.on('change', () => {
-  console.log(newUser);
+  console.log(`Changed user ${newUser.get('id')} with name ${newUser.get('name')}`);
 });
 newUser.fetch();
+newUser.set({ name: 'Awesome!' });
