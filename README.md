@@ -39,6 +39,7 @@ json-server -w db.json
 - Class that manages the instantiation of dynamic html within the DOM
 - Reacting to custom events
 - Update of the template when data changes (re-rendering the whole content)
+- Generic class that depends on a Generic class itself (`View.ts`)
 
 ## Run
 
