@@ -43,4 +43,5 @@ user.on('change', () => {
 
 console.log(user.get('name'));
 
-user.trigger('change');
+// user.trigger('change');
+user.set({ name: 'New name' });
