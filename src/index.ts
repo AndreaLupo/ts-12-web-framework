@@ -5,7 +5,7 @@ axios.post('http://localhost:3000/users', {
   age: 20
 });  */
 
-import { User } from "./models/User";
+/* import { User } from "./models/User";
 
 const user = new User({ id: 1 });
 
@@ -23,4 +23,24 @@ baby.save();
 user.events.on('change', () => {
   console.log('change!');
 });
-user.events.trigger('change');
+user.events.trigger('change'); */
+
+import { User } from "./models/User";
+
+const user = new User({ name: 'Other one', age: 1 });
+
+/* BAD!!!! 
+user.attributes.get('id')
+user.attributes.get('name')
+user.attributes.get('age')
+
+user.sync.save(...); 
+*/
+
+user.on('change', () => {
+  console.log('changed!');
+});
+
+console.log(user.get('name'));
+
+user.trigger('change');

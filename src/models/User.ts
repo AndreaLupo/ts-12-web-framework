@@ -18,4 +18,43 @@ export class User {
   constructor(attrs: UserProps) {
     this.attributes = new Attributes<UserProps>(attrs);
   }
+
+  /* 
+  on(eventName: string, callback: Callback): void {
+    this.events.on(eventName, callback);
+  }
+  */
+
+  /**
+   * Returns the reference to the function on the Eventing class.
+   */
+  get on() {
+    return this.events.on;
+  }
+
+  get trigger() {
+    return this.events.trigger;
+  }
+
+  get get() {
+    return this.attributes.get;
+  }
 }
+
+/**
+ * Reminder of how 'this' works in javascript:
+ * 
+ */
+
+/*
+const colors = {
+  color: 'red',
+  printColor() {
+    console.log(this.color);
+  }
+};
+colors.printColor(); // ok!
+
+const printColor = colors.printColor;
+printColor(); // ACCESS error on this.color!!
+*/
